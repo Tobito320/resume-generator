@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ResumeGenie</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>ResumeGenie</h1>
+    <form id="resume-form">
+      <label>Name<input type="text" id="name" required></label>
+      <label>Contact<input type="text" id="contact" required></label>
+      <label>Work Experience<textarea id="experience"></textarea></label>
+      <label>Skills<textarea id="skills"></textarea></label>
+      <label>Education<textarea id="education"></textarea></label>
+      <label>Template
+        <select id="template">
+          <option value="template1">Classic</option>
+          <option value="template2">Modern</option>
+          <option value="template3">Minimal</option>
+        </select>
+      </label>
+      <label>Accent Color<input type="color" id="color" value="#0d6efd"></label>
+      <button type="submit">Generate</button>
+    </form>
+    <div id="preview" class="template1"></div>
+    <button id="download" disabled>Download PDF</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

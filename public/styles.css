@@ -1,0 +1,42 @@
+:root {
+  --accent: #0d6efd;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: #f5f5f5;
+}
+.container {
+  max-width: 800px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+form label {
+  display: block;
+  margin-top: 10px;
+}
+form input, form textarea, form select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+}
+#preview {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-top: 20px;
+  min-height: 200px;
+}
+#preview h2, #preview h3 {
+  color: var(--accent);
+}
+.template2 {
+  font-family: 'Georgia', serif;
+}
+.template3 {
+  font-size: 14px;
+  line-height: 1.2;
+}
