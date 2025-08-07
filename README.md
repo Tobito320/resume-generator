@@ -17,9 +17,16 @@ npm install
 
 Start the server:
 ```
-npm start
+node server.js
 ```
 
-The app is served at [http://localhost:3000](http://localhost:3000).
+The app is served at [http://localhost:3000](http://localhost:3000). To reach it from another device on the same network, replace
+`localhost` with your PC's IP address, for example: `http://192.168.1.10:3000`.
+
+Ensure your firewall allows incoming connections on port `3000`.
+
+Find your local IP address:
+- **Windows:** `ipconfig` (Command Prompt) → look for the `IPv4 Address`.
+- **macOS / Linux:** `ifconfig` or `ip addr` → use the address for your active network interface.
 
 Set the `OPENAI_API_KEY` environment variable to enable AI-powered text generation. Without it, the app falls back to returning the raw text provided.
