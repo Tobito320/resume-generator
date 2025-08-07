@@ -39,5 +39,34 @@ app.post('/api/generate', async (req, res) => {
   }
 });
 
+app.post('/api/chat', async (req, res) => {
+  const { messages } = req.body;
+  try {
+    if (!openai) {
+      const last = messages[messages.length - 1]?.content || '';
+      return res.json({ reply: `Echo: ${last}` });
+    }
+
+    const completion = await openai.chat.completions.create({
+      model: 'gpt-3.5-turbo',
+      messages: [
+        { role: 'system', content: 'You are a helpful assistant for editing a resume web app. Respond with a JSON object containing keys reply, and optional color or preview.' },
+        ...messages
+      ]
+    });
+
+    const content = completion.choices[0].message.content;
+    let data;
+    try {
+      data = JSON.parse(content);
+    } catch {
+      data = { reply: content };
+    }
+    res.json(data);
+  } catch (err) {
+    res.status(500).json({ error: 'Chat failed.' });
+  }
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`ResumeGenie server running on port ${PORT}`));
